@@ -7,14 +7,34 @@ void BazaPojazdow::dodaj(std::unique_ptr< Pojazd > p)// std::move przenosi wlasn
     lista.push_back(std::move(p));
 }
 
-void BazaPojazdow::usun(int indeks)// Sprawdza czy podany numer istnieje w tablicy
+//void BazaPojazdow::usun(int indeks)// Sprawdza czy podany numer istnieje w tablicy
+//{
+//    if (indeks >= 0 && indeks < static_cast< int >(lista.size()))
+//    {
+//       lista.erase(lista.begin() + indeks);// erase usuwa element, a unique_ptr automatycznie zwalnia pamiec
+ //   }
+//
+void BazaPojazdow::usun(int indeks)
 {
+    // Sprawdza czy indeks nie jest mniejszy od 0 lub wiekszy od rozmiaru listy
     if (indeks >= 0 && indeks < static_cast< int >(lista.size()))
     {
-        lista.erase(lista.begin() + indeks);// erase usuwa element, a unique_ptr automatycznie zwalnia pamiec
+
+        // erase() potrzebuje iteratora, dlatego uzywamy lista.begin() + indeks
+        lista.erase(lista.begin() + indeks);
+
+        std::cout << "SUKCES: Pojazd pod indeksem " << indeks << " zostal trwale usuniety.\n";
+    }
+    else
+    {
+        // Informacja jesli zly numer zostal podany
+        std::cout << "BLAD: Nie ma pojazdu o takim indeksie! (Aktualny zakres: 0 - "
+                  << (lista.empty() ? 0 : lista.size() - 1) << ")\n";
     }
 }
-
+/// <summary>
+/// /
+/// </summary>
 void BazaPojazdow::pokazWszystkie() const
 {
     for (size_t i = 0; i < lista.size(); ++i)

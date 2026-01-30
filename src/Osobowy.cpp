@@ -7,6 +7,6 @@ void Osobowy::wyswietl() const
 
 void Osobowy::zapiszBinarnie(std::ostream& out) const
 {
-    Pojazd::zapiszBinarnie(out);// Najpierw wywoluje wersje z klasy bazowej by zapisac marke i rok // Zapis danych bazowych
+    Pojazd::zapiszBinarnie(out);// Najpierw wywoluje wersje z klasy bazowej by zapisac marke i rok. Zapis danych bazowych
     out.write(reinterpret_cast< const char* >(&liczbaDrzwi), sizeof(liczbaDrzwi));// dopisuje ceche specyficzna dla tego typu
 }
