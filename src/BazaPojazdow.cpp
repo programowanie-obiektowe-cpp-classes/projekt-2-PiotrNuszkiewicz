@@ -23,7 +23,7 @@ void BazaPojazdow::usun(int indeks)
         // erase() potrzebuje iteratora, dlatego uzywamy lista.begin() + indeks
         lista.erase(lista.begin() + indeks);
 
-        std::cout << "SUKCES: Pojazd pod indeksem " << indeks << " zostal trwale usuniety.\n";
+        std::cout << "Pojazd pod indeksem " << indeks << " zostal trwale usuniety.\n";
     }
     else
     {
