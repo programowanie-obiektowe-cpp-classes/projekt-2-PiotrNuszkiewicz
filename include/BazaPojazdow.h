@@ -8,7 +8,7 @@ class BazaPojazdow
 {
 private:
     
-    std::vector< std::unique_ptr< Pojazd > > lista;// vector do przechowywania wskaznika
+    std::vector< std::unique_ptr< Pojazd > > lista;// Wektor do przechowywania wskaznika
 
     
     BazaPojazdow() {}// konstruktor prywatny 

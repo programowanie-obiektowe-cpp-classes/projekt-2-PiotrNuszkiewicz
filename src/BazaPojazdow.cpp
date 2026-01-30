@@ -32,9 +32,8 @@ void BazaPojazdow::usun(int indeks)
                   << (lista.empty() ? 0 : lista.size() - 1) << ")\n";
     }
 }
-/// <summary>
-/// /
-/// </summary>
+//
+//
 void BazaPojazdow::pokazWszystkie() const
 {
     for (size_t i = 0; i < lista.size(); ++i)
